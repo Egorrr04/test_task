@@ -1,0 +1,166 @@
+:root {
+  --color-dark: #000000;
+  --color-light: #ffffff;
+  --color-dark-gray: #131619;
+  --color-light-gray: #c4c4c4;
+  --border-radius: 30px;
+  --border: 1px solid var(var(--color-light));
+  --container-width: 1300px;
+  --container-padding-x: 15px;
+  --transition-duration: 0.2s;
+  --background: linear-gradient(to top, #000000, #020727, #000000);
+  --background-other: linear-gradient(to top, #5c2222, #390842, #1a2031);
+  --background-white: linear-gradient(to top, #ececec, #dadada, #dce2e7);
+}
+
+body {
+  background: var(--background-white);
+}
+
+.container {
+  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+  margin-inline: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-inline: var(--container-padding-x);
+}
+
+
+/* ----------------------------------------------------------------------------- */
+/* календарь */
+/* ----------------------------------------------------------------------------- */
+
+th {
+  padding: 5px;
+}
+
+td {
+}
+.td__cell {
+  position: relative;
+  height: 70px;
+  width: 60px;
+  text-align: center;
+}
+
+.td__cell:hover {
+  opacity: 0.8;
+  border: 1px solid #0051ff !important;
+}
+
+.input__cell {
+  opacity: 0;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.emulator__cell {
+}
+
+.input__cell[type="radio"]:checked + .emulator__cell {
+  position: absolute;
+  background-color: #0051ff;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  opacity: 0.2;
+}
+
+.date__cell {
+  position: relative;
+}
+
+table {
+  color: #ffffff;
+  border-color: #5a5656;
+}
+
+.calendar {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  background: var(--background);
+  border: 6px solid #020727;
+  border-radius: 5%;
+  row-gap: 20px;
+}
+
+.calendar__body {
+  display: flex;
+}
+
+.calendar__form {
+}
+
+.calendar__title {
+  text-align: center;
+}
+
+.calendar__print-time {
+  height: 60px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.input {
+  color: #ffffff;
+  background-color: #020727;
+}
+.button {
+  color: #ffffff;
+  background-color: #020727;
+}
+
+
+
+/* ----------------------------------------------------------------------------- */
+/* слайдер */
+/* ----------------------------------------------------------------------------- */
+
+.slide {
+  max-width: 500px;
+  justify-content: center;
+  display: flex;
+}
+.slider {
+  max-width: 500px;
+  display: flex;
+  position: relative;
+
+  overflow: hidden;
+  margin: auto;
+}
+
+.slider__line {
+  display: flex;
+
+  transition-duration: 0.4s;
+}
+
+.slider__button-prev,
+.slider__button-next {
+  padding: 20px;
+  background: var(--background-other);
+  transition-duration: 0.2s;
+  border: 2px solid #000000;
+}
+
+.slider__button-prev {
+  border-radius: 50% 0 0 50%;
+}
+.slider__button-prev:hover {
+  background-color: #040c41;
+}
+.slider__button-next {
+  border-radius: 0 50% 50% 0;
+}
+.slider__button-next:hover {
+  background-color: #040c41;
+}
